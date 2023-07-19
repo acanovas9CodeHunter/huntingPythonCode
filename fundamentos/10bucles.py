@@ -1,0 +1,74 @@
+"""
+EN PYTHON, LOS BUCLES SE UTILIZAN PARA REPETIR UN BLOQUE DE CÓDIGO VARIAS VECES. SON ESTRUCUTRAS FUNDAMENTALES EN LA PROGRAMACIÓN Y PERMITEN AUTOMATIZAR TAREAS
+REPETITIVAS. LOS BULES PRINCIPALES SON EL FOR Y EL WHILE
+"""
+
+#BUCLE FOR
+#USAMOS LA FUNCIÓN RANGE PARA DELIMINAR HASTA DONDE QUEREMOS LLEGAR, ESTA PUEDE TENER 1, 2 O 3 ATRIBUTOS
+#RANGE(10) QUEREMOS RECORRER DESDE 0 HASTA EL NÚMERO 10->1,2,3,4,5,6,7,8,9
+#RANGE(5,10) QUEREMOS RECORRER DESDE EL 5 HASTA EL NÚMERO 10->5,6,7,8,9
+#RANGE(1,10,2) QUEREMOS RECORRER DESDE EL 1 HASTA EL 10, DE 2 EN 2->1,3,5,7,9
+#FOR PARA RECORRER ENTEROS
+for i in range(5):
+    print(i)
+print("--------------------------")
+cadena = "HOLA"
+#FOR PARA RECORRER CADENAS
+for letra in cadena:
+    print(letra)
+print("--------------------------")
+my_list = [6,7,8,9]
+#FOR PARA RECORRER LISTAS
+for item in my_list:
+    print(item)
+print("--------------------------")
+my_diccionario1 = {"1": "Felipe", "2" : "Eugenio", "3" : 21}
+#FOR PARA RECORRER DICCIONARIOS
+for i, v in my_diccionario1.items():
+    print(i,v)
+print("--------------------------")
+#LA FUNCIÓN REVERSED HACE QUE EL BUCLE ITERE DEL FINAL AL PRINCIPIO, ES DECIR DEL 10 HASTA EL 1
+for i in reversed(range(1, 10, 2)):
+    print(i)
+print("--------------------------")
+#LA FUNCION ZIP SE UTILIZAN PARA COMBINAR DOS LISTAS EN PARES
+nombres = ["Juan", "MarIa", "Pedro"]
+edades = [25, 30, 35]
+for nombre, edad in zip(nombres, edades):
+    print(f"Nombre: {nombre}, Edad: {edad}")
+
+
+#LOS BULCES WHILE EN PYTHON SON ESTRUCTURAS DE CONTROL QUE PERMITEN REPETIR UN BLOQUE DE CODIGO MIENTRAS SE CUMPLA UNA CONDICION
+#LA SINTAXIS BASICA DE UN BUCLE WHILE EN PYTHON EN LA SIGUIENTE: 
+#WHILE(CONDICION)
+#   QUE SUCEDA ALGO
+#ES UNA EXPRESIÓN BOOLEANA QUE SE EVALÚA ANTES DE EJECUTAR CADA ITERACIÓN DEL BUCLE. SI LA CONDICIÓN ES VERDADERA SE EJECUTA, Y SE EJECUTA EL CÓDIGO DE DENTRO DEL BUCLE
+#Y LUEGO SE VUELVE A EVALUAR LA CONDICIÓN. CUANDO LA CONDICIÓN DEVUELVA FALSE, SE DETIENE LA EJECUCIÓN DEL PROGRAMA Y SE SALE
+contador = 1
+while contador <= 5:
+    print(contador)
+    contador += 1#SI NO INCREMENTARAMOS LA VARIABLE CONTADOR DE LA CONDICION ENTRARÍAMOS EN UN BUCLE INFINITO, YA QUE SIEMPRE SE CUMPLE LA CONDICIÓN
+
+#BUCLE WHILE ELSE, ESTE NOS PERMITE AÑADIR UNA CLAUSULA PARA CUANDO NO SE CUMPLA LA CONDICION DEL WHILE
+
+contador = 0
+while contador < 5:
+    print("El contador es:", contador)
+    contador += 1
+else:
+    print("Bucle completado")
+
+print("Despues del bucle")
+
+#EN LOS BUCLES WHILE EXISTE UNA CLASULA BREAK QUE HACE QUE EL BUCLE SE DETENGA
+#VAMOS A RECORRER UNA LISTA Y CUANDO LA SUMA DE SUS ELEMENTOS SEA MAYOR A UN NUMERO SALIMOS DEL BUCLE
+lista = [3,2,1,4,5,6,0]
+indice = 0
+suma = 0
+while indice < len(lista):
+    elemento = lista[indice]
+    suma += elemento
+    if suma > 5:
+        print("La suma de los numeros de la lista es: " + str(suma))
+        break
+    indice+=1
